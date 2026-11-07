@@ -8,6 +8,7 @@
 ## Dependencies: BetterBags
 ## SavedVariables: BetterBagsTreasuresDB
 ## X-Curse-Project-ID: 1788262
+## X-Wago-ID: kGr97YKy
 
 # Locales
 i18n\enUS.lua
