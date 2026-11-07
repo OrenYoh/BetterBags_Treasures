@@ -4,7 +4,7 @@
 ## Notes: Finds the treasures in your bags (containers, lockboxes, toys, mounts, pets, appearances and recipes), and groups and highlights them in BetterBags.
 ## Author: OrenYoh
 ## Version: 1.0.0
-## IconTexture: Interface\Icons\INV_Box_01
+## IconTexture: Interface\AddOns\BetterBags_Treasures\images\treasures.png
 ## Dependencies: BetterBags
 ## SavedVariables: BetterBagsTreasuresDB
 ## X-Curse-Project-ID: 1788262
