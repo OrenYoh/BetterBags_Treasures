@@ -30,7 +30,7 @@ L["OPTIONS_CATEGORY_OFF"] = "Don't group them";
 L["OPTIONS_CATEGORY_SINGLE"] = "One Treasures category";
 L["OPTIONS_CATEGORY_SPLIT"] = "A category for each kind";
 L["OPTIONS_KINDS"] = "Treasures to find";
-L["OPTIONS_KINDS_DESC"] = "Which kinds of items count as treasures, for the categories, the highlight and the Open Next key.";
+L["OPTIONS_KINDS_DESC"] = "Which kinds of items count as treasures, for the categories and the highlight.";
 L["OPTIONS_KIND"] = "Find";
 L["OPTIONS_UNCOLLECTED"] = "Only what I haven't collected yet";
 L["OPTIONS_UNCOLLECTED_DESC"] = "Toys, mounts, pets, appearances and recipes you already know are not treasures, so duplicates show up where you can sell or trade them.";
@@ -50,8 +50,6 @@ L["OPTIONS_PULSE"] = "Pulse";
 L["OPTIONS_PULSE_DESC"] = "The highlight fades in and out slowly. Off, it stays still.";
 L["OPTIONS_GREY"] = "Grey out what I can't open or use yet";
 L["OPTIONS_GREY_DESC"] = "Lockboxes that are still locked, and treasures above your level, are highlighted in grey.";
-L["OPTIONS_OPEN"] = "Open Next";
-L["OPTIONS_OPEN_DESC"] = "Opens the next container in your bags, one per press. Bind a key to it in Key Bindings, under AddOns > BetterBags - Treasures, or put this line in a macro:\n\n|cffffd100/click BetterBagsTreasuresOpenButton|r\n\nThe game only lets an addon use an item from a key or a click, never by itself. In combat, it opens the container it had picked before the fight.";
 L["OPTIONS_LISTS"] = "Your Items";
 L["OPTIONS_LISTS_DESC"] = "Items you always want as treasures, or never. Type an item ID in a box, or in chat (Shift-click an item to put its link in): |cffffd100/treasures always <item>|r, |cffffd100/treasures never <item>|r, |cffffd100/treasures remove <item>|r.";
 L["OPTIONS_ALWAYS_ADD"] = "Always a treasure";
@@ -69,6 +67,3 @@ L["LIST_NOT_LISTED"] = "%s isn't on your list.";
 L["SLASH_HELP"] = "Commands: |cffffd100/treasures always <item>|r, |cffffd100/treasures never <item>|r, |cffffd100/treasures remove <item>|r, |cffffd100/treasures list|r.";
 L["LIST_EMPTY"] = "Your list is empty.";
 
-L["OPEN_NOTHING"] = "No container to open.";
-
-L["BINDING_OPEN_NEXT"] = "Open Next Container";

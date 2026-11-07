@@ -27,7 +27,7 @@ L["OPTIONS_CATEGORY_OFF"] = "Ne pas les regrouper";
 L["OPTIONS_CATEGORY_SINGLE"] = "Une catégorie Trésors";
 L["OPTIONS_CATEGORY_SPLIT"] = "Une catégorie par type";
 L["OPTIONS_KINDS"] = "Trésors à trouver";
-L["OPTIONS_KINDS_DESC"] = "Les types d'objets qui comptent comme des trésors, pour les catégories, la mise en évidence et la touche Ouvrir le suivant.";
+L["OPTIONS_KINDS_DESC"] = "Les types d'objets qui comptent comme des trésors, pour les catégories et la mise en évidence.";
 L["OPTIONS_KIND"] = "Trouver";
 L["OPTIONS_UNCOLLECTED"] = "Seulement ce que je n'ai pas encore collectionné";
 L["OPTIONS_UNCOLLECTED_DESC"] = "Les jouets, montures, mascottes, apparences et recettes que vous connaissez déjà ne sont pas des trésors : les doublons restent là où vous pouvez les vendre ou les échanger.";
@@ -47,8 +47,6 @@ L["OPTIONS_PULSE"] = "Pulsation";
 L["OPTIONS_PULSE_DESC"] = "La mise en évidence apparaît et disparaît lentement. Désactivée, elle reste fixe.";
 L["OPTIONS_GREY"] = "Griser ce que je ne peux pas encore ouvrir ou utiliser";
 L["OPTIONS_GREY_DESC"] = "Les coffrets encore verrouillés, et les trésors au-dessus de votre niveau, sont mis en évidence en gris.";
-L["OPTIONS_OPEN"] = "Ouvrir le suivant";
-L["OPTIONS_OPEN_DESC"] = "Ouvre le conteneur suivant de vos sacs, un par appui. Associez-lui une touche dans les Raccourcis, sous AddOns > BetterBags - Treasures, ou mettez cette ligne dans une macro :\n\n|cffffd100/click BetterBagsTreasuresOpenButton|r\n\nLe jeu ne laisse un addon utiliser un objet que sur une touche ou un clic, jamais tout seul. En combat, il ouvre le conteneur qu'il avait choisi avant le combat.";
 L["OPTIONS_LISTS"] = "Vos objets";
 L["OPTIONS_LISTS_DESC"] = "Les objets que vous voulez toujours comme trésors, ou jamais. Tapez un ID d'objet dans une case, ou dans le chat (Maj-clic sur un objet pour y mettre son lien) : |cffffd100/treasures always <objet>|r, |cffffd100/treasures never <objet>|r, |cffffd100/treasures remove <objet>|r.";
 L["OPTIONS_ALWAYS_ADD"] = "Toujours un trésor";
@@ -66,6 +64,3 @@ L["LIST_NOT_LISTED"] = "%s n'est pas dans votre liste.";
 L["SLASH_HELP"] = "Commandes : |cffffd100/treasures always <objet>|r, |cffffd100/treasures never <objet>|r, |cffffd100/treasures remove <objet>|r, |cffffd100/treasures list|r.";
 L["LIST_EMPTY"] = "Votre liste est vide.";
 
-L["OPEN_NOTHING"] = "Aucun conteneur à ouvrir.";
-
-L["BINDING_OPEN_NEXT"] = "Ouvrir le conteneur suivant";

@@ -176,14 +176,5 @@ function addon:Refresh(categoriesToo)
     if self.RefreshHighlights then
         self:RefreshHighlights();
     end
-    if self.UpdateOpener then
-        self:UpdateOpener();
-    end
 end
------------------------------
-
---- Key binding names (Bindings.xml)
------------------------------
-_G.BINDING_HEADER_BETTERBAGSTREASURES = "BetterBags - " .. L["TITLE"];
-_G["BINDING_NAME_CLICK BetterBagsTreasuresOpenButton:LeftButton"] = L["BINDING_OPEN_NEXT"];
 -----------------------------

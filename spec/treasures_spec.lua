@@ -11,7 +11,7 @@ end
 local ADDON_DIR = os.getenv("TREASURES_DIR")
 local TOC_FILES = {
   "i18n/enUS.lua", "i18n/frFR.lua", "BetterBags_Treasures.lua", "modules/detect.lua", "modules/categories.lua",
-  "modules/highlight.lua", "modules/opener.lua", "modules/lists.lua", "modules/options.lua",
+  "modules/highlight.lua", "modules/lists.lua", "modules/options.lua",
 }
 
 describe("BetterBags_Treasures", function()
@@ -25,7 +25,6 @@ describe("BetterBags_Treasures", function()
       mounts = { [1002] = 55 }, mountsOwned = {},
       pets = { [1003] = 77 }, petsOwned = {},
       minLevel = {},
-      inCombat = false,
     }
     _G.C_ToyBox = { GetToyInfo = function(id) if c.toys[id] then return id, "Toy" end end }
     _G.PlayerHasToy = function(id) return c.toysOwned[id] == true end
@@ -51,7 +50,6 @@ describe("BetterBags_Treasures", function()
       return "Item " .. id, "|cffffffff|Hitem:" .. id .. "|h[Item " .. id .. "]|h|r", 1, 10, c.minLevel[id] or 1
     end
     _G.UnitLevel = function() return 20 end
-    _G.InCombatLockdown = function() return c.inCombat end
     _G.ITEM_OPENABLE, _G.LOCKED, _G.ITEM_SPELL_KNOWN = "<Right Click to Open>", "Locked", "Already known"
     _G.TRANSMOGRIFY_TOOLTIP_APPEARANCE_KNOWN = "You've collected this appearance"
     _G.ITEM_TOY_ONUSE = "Use: Adds this toy to your Toy Box."
@@ -288,45 +286,6 @@ describe("BetterBags_Treasures", function()
       ns.db.style = "none"
       ns:RefreshHighlights()
       assert.is_false(o:IsShown())
-    end)
-  end)
-
-  describe("Open Next", function()
-    local function target()
-      return _G.BetterBagsTreasuresOpenButton:GetAttribute("item")
-    end
-
-    it("points at the first container it can open", function()
-      slot(0, 1, { itemID = 2004, hasLoot = true, locked = true })
-      slot(0, 2, { itemID = 2002 })
-      slot(0, 3, { itemID = 2001, hasLoot = true })
-      ns:UpdateOpener()
-      assert.are.equal("0 3", target())
-      assert.are.equal("item", _G.BetterBagsTreasuresOpenButton:GetAttribute("type"))
-    end)
-
-    it("skips a container above the player's level and one on the Never list", function()
-      slot(0, 1, { itemID = 2005, hasLoot = true }); c.minLevel[2005] = 30
-      slot(0, 2, { itemID = 2001, hasLoot = true })
-      ns.db.never[2001] = true
-      ns:UpdateOpener()
-      assert.is_nil(target())
-    end)
-
-    it("waits for the end of combat to change its target", function()
-      slot(0, 1, { itemID = 2001, hasLoot = true })
-      c.inCombat = true
-      ns:UpdateOpener()
-      assert.is_nil(target())
-      c.inCombat = false
-      fire("PLAYER_REGEN_ENABLED")
-      assert.are.equal("0 1", target())
-    end)
-
-    it("says so when there is nothing to open", function()
-      ns:UpdateOpener()
-      _G.BetterBagsTreasuresOpenButton:GetScript("PreClick")(_G.BetterBagsTreasuresOpenButton)
-      assert.is_truthy(printed[#printed]:find("No container to open", 1, true))
     end)
   end)
 

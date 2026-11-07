@@ -121,6 +121,11 @@ events:RegisterMessage("item/Clearing", function(_, _, decoration)
     if decoration then hide(decoration) end
 end);
 
+-- A level gained can make a treasure usable (greyed out until then)
+addon:OnGameEvent("PLAYER_LEVEL_UP", function()
+    addon:RefreshHighlights();
+end);
+
 -- Draws every highlight shown again, after a setting or a collection changed. Buttons with no
 -- highlight yet get theirs on their next draw (and addon:Refresh(true) redraws every bag).
 function addon:RefreshHighlights()

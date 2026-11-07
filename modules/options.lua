@@ -168,9 +168,6 @@ addon.options = {
         end,
     },
 
-    openHeader = { type = "header", order = 40, name = L["OPTIONS_OPEN"] },
-    openDesc = { type = "description", order = 41, name = L["OPTIONS_OPEN_DESC"] },
-
     listsHeader = { type = "header", order = 50, name = L["OPTIONS_LISTS"] },
     listsDesc = { type = "description", order = 51, name = L["OPTIONS_LISTS_DESC"] },
     alwaysAdd = {
