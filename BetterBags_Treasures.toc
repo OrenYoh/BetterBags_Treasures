@@ -7,6 +7,7 @@
 ## IconTexture: Interface\Icons\INV_Box_01
 ## Dependencies: BetterBags
 ## SavedVariables: BetterBagsTreasuresDB
+## X-Curse-Project-ID: 1788262
 
 # Locales
 i18n\enUS.lua
