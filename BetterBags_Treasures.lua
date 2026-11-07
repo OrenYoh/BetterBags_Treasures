@@ -53,7 +53,7 @@ local DEFAULTS = {
         appearance = true,
         recipe = false,
     },
-    uncollectedOnly = true,
+    uncollectedOnly = false,
     style = "glow", -- "none", "glow", "badge" or "both"
     color = { r = 1, g = 0.82, b = 0 },
     corner = "TOPLEFT",

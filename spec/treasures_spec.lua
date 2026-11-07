@@ -173,22 +173,24 @@ describe("BetterBags_Treasures", function()
     assert.is_nil(bb:GetModule("Categories"):GetCategoryByName("Treasures"))
   end)
 
-  it("leaves out what is already collected, unless asked not to", function()
+  it("keeps what is already collected by default, and leaves it out when asked", function()
     slot(0, 1, { itemID = 1001 })
     slot(0, 2, { itemID = 1002 })
     slot(0, 3, { itemID = 1003 })
     c.toysOwned[1001], c.mountsOwned[55], c.petsOwned[77] = true, true, true
-    assert.is_nil(category(data(0, 1, 1001)))
-    assert.is_nil(category(data(0, 2, 1002)))
-    assert.is_nil(category(data(0, 3, 1003)))
-    ns.db.uncollectedOnly = false
+    assert.is_false(ns.db.uncollectedOnly)
     assert.are.equal("Treasures", category(data(0, 1, 1001)))
     assert.are.equal("Treasures", category(data(0, 2, 1002)))
     assert.are.equal("Treasures", category(data(0, 3, 1003)))
+    ns.db.uncollectedOnly = true
+    assert.is_nil(category(data(0, 1, 1001)))
+    assert.is_nil(category(data(0, 2, 1002)))
+    assert.is_nil(category(data(0, 3, 1003)))
   end)
 
   it("reads a recipe as known from the game's Already known line", function()
     ns.db.kinds.recipe = true
+    ns.db.uncollectedOnly = true
     slot(0, 1, { itemID = 3001 })
     slot(0, 2, { itemID = 3002, lines = { "Already known" } })
     assert.are.equal("Treasures", category(data(0, 1, 3001, 9)))
