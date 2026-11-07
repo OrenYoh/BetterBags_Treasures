@@ -1,6 +1,6 @@
--- BetterBags-Treasures on the whole of BetterBags (its spec/helpers/whole_addon.lua). Run from a BetterBags checkout
+-- BetterBags_Treasures on the whole of BetterBags (its spec/helpers/whole_addon.lua). Run from a BetterBags checkout
 -- with its Lua 5.1 busted, TREASURES_DIR pointing at this addon (TREASURES_FOREVER=1 for the WoW: Forever client):
---   TREASURES_DIR=../BetterBags-Treasures ~/.local/lua51/bin/busted ../BetterBags-Treasures/spec/treasures_spec.lua
+--   TREASURES_DIR=../BetterBags_Treasures ~/.local/lua51/bin/busted ../BetterBags_Treasures/spec/treasures_spec.lua
 local WholeAddon = dofile("spec/helpers/whole_addon.lua")
 -- This checkout's LibWindow has its $Revision$ unexpanded, which LibStub can't read: a nil minor is 1.
 local newLibrary = LibStub.NewLibrary
@@ -10,11 +10,11 @@ LibStub.NewLibrary = function(self, major, minor)
 end
 local ADDON_DIR = os.getenv("TREASURES_DIR")
 local TOC_FILES = {
-  "i18n/enUS.lua", "i18n/frFR.lua", "BetterBags-Treasures.lua", "modules/detect.lua", "modules/categories.lua",
+  "i18n/enUS.lua", "i18n/frFR.lua", "BetterBags_Treasures.lua", "modules/detect.lua", "modules/categories.lua",
   "modules/highlight.lua", "modules/opener.lua", "modules/lists.lua", "modules/options.lua",
 }
 
-describe("BetterBags-Treasures", function()
+describe("BetterBags_Treasures", function()
   local handle, bb, ns, c, frames, tooltipLines, printed
 
   -- The client: bag slots, item info, collections and tooltips
@@ -119,10 +119,10 @@ describe("BetterBags-Treasures", function()
     ns = {}
     for _, file in ipairs(TOC_FILES) do
       local chunk = assert(loadfile(ADDON_DIR .. "/" .. file))
-      chunk("BetterBags-Treasures", ns)
+      chunk("BetterBags_Treasures", ns)
     end
-    fire("ADDON_LOADED", "BetterBags-Treasures")
-    assert.are.same({}, handle.errors, "loading BetterBags-Treasures")
+    fire("ADDON_LOADED", "BetterBags_Treasures")
+    assert.are.same({}, handle.errors, "loading BetterBags_Treasures")
   end)
 
   after_each(function()

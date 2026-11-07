@@ -1,4 +1,4 @@
-package-as: BetterBags-Treasures
+package-as: BetterBags_Treasures
 
 ignore:
   - .github
